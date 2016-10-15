@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+html, body, main, main a, main a span {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    background: white;
+    font: normal 62.5%/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #555;
+}
+
+body { position: relative; }
+
+
+main a {
+    display: block;
+    background: url( "../images/home.png" ) center no-repeat;
+    -webkit-tap-highlight-color: rgba( 0, 0, 0, 0);
+    cursor: default;
+}
+
+main a span {
+    display: block;
+    background: url( "../images/home-light.png" ) center no-repeat;
+    font-size: 0;
+    opacity: 0;
+}
+
+@keyframes lighting {
+    0% { opacity: 0; }
+    10% { opacity: 0.66; }
+    20% { opacity: 0; }
+    30% { opacity: 0.33; }
+    50% { opacity: 0; }
+    60% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+main a.light span {
+    animation: lighting 1s step-start 0s 1 forwards;
+}
+
+footer {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 100;
+    text-align: right;
+}
+
+footer a {
+    color: #666;
+    text-decoration: none;
+    transition: color .125s ease-in;
+}
+
+footer a:hover {
+    color: #c30;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (min--moz-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 1.5/1), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 125dpi), all and (min-resolution: 1.5dppx) {
+    main a {
+        background: url( "../images/home@2x.png" ) center no-repeat;
+        background-size: 500px;
+    }
+    main a span {
+        background: url( "../images/home-light@2x.png" ) center no-repeat;
+        background-size: 500px;
+    }
+}
